@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <title>SignIn</title>
+
+    	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div>
+        {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top">
+      <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px; padding-left:50px;" >
+
+        <div>
+            <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+        </div>
+        </div></nav></section></div><br><br>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% load static %}
+
+<label class="half" style="padding-left:250px;">
+
+<select name="speciality" id="speciality" required="">
+<option value="">Choose Speciality</option>
+
+   <option value="Allergy and immunology"> Allergy and immunology </option>
+   <option value="Anesthesiology"> Anesthesiology </option>
+	<option value="Child and Adolescent Psychiatry"> Child and Adolescent Psychiatry </option>
+    <option value="Chiropractic"> Chiropractic </option>
+    <option value="Clinical Cardiac Electrophysiology"> Clinical Cardiac Electrophysiology </option>
+    <option value="Colon and Rectal Surgery"> Colon and Rectal Surgery </option>
+    <option value="Diagnostic Radiology"> Diagnostic Radiology </option>
+    <option value="Dermatology"> Dermatology </option>
+    <option value="Emergency Medicine"> Emergency Medicine </option>
+    <option value="Endocrinology"> Endocrinology </option>
+    <option value="Facial Plastic Surgery"> Facial Plastic Surgery </option>
+    <option value="Cardiology" name="Cardiology"> <a href="postDeptChooseUser/">Cardiology</a> </option>
+    <option value="Dentist" name="Dentist"> <a href="postDeptChooseUser/"> Dentist</a> </option>
+	<option value="Gastroenterology"> Gastroenterology </option>
+    <option value="General Practice"> General Practice </option>
+    <option value="General Surgery"> General Surgery </option>
+    <option value="Geriatric Medicine"> Geriatric Medicine </option>
+    <option value="Hematology"> Hematology </option>
+    <option value="Hepatology"> Hepatology </option>
+    <option value="Hospitalist"> Hospitalist </option>
+    <option value="Infectious Disease"> Infectious Disease </option>
+    <option value="Internal Medicine"> Internal Medicine </option>
+    <option value="Medical Genetics"> Medical Genetics </option>
+    <option value="Naturopathy"> Naturopathy </option>
+    <option value="Nephrology"> Nephrology </option>
+    <option value="Neurology"> Neurology </option>
+    <option value="Neurosurgeon"> Neurosurgeon </option>
+    <option value="Nuclear Medicine"> Nuclear Medicine </option>
+    <option value="Nutritionist"> Nutritionist </option>
+    <option value="Obstetrics / Gynecology (OBGYN)"> Obstetrics / Gynecology (OBGYN) </option>
+    <option value="Occupational Medicine"> Occupational Medicine </option>
+    <option value="Ophthalmology"> Ophthalmology </option>
+    <option value="Optometry"> Optometry </option>
+    <option value="Oncology"> Oncology </option>
+    <option value="Orthopedic Surgery"> Orthopedic Surgery </option>
+    <option value="Osteopathic Medicine"> Osteopathic Medicine </option>
+    <option value="Osteopathic Medicine"> Osteopathic Medicine </option>
+    <option value="Otolaryngology / ENT"> Otolaryngology / ENT </option>
+    <option value="Pain Medicine"> Pain Medicine </option>
+    <option value="Pathology (Anatomic/Clinical)"> Pathology (Anatomic/Clinical) </option>
+    <option value="Pediatrics"> Pediatrics </option>
+    <option value="Physical Medicine and Rehabilitation"> Physical Medicine and Rehabilitation </option>
+    <option value="Plastic and Reconstructive Surgery"> Plastic and Reconstructive Surgery </option>
+    <option value="Podiatry"> Podiatry </option>
+    <option value="Primary Care"> Primary Care </option>
+    <option value="Psychiatry"> Psychiatry </option>
+    <option value="Psychology"> Psychology </option>
+    <option value="Pulmonary Disease"> Pulmonary Disease </option>
+    <option value="Radiology"> Radiology </option>
+    <option value="Rheumatology"> Rheumatology </option>
+    <option value="Thoracic Surgery"> Thoracic Surgery </option>
+    <option value="Transplant Surgery"> Transplant Surgery </option>
+
+
+
+
+     </select></label>
+
+
+            <button type="submit"><i class="fa fa-search"></i></button><br>
+            <div class="outer" style="display: block; margin-left: auto; margin-right: auto; width: 75%;">
+    <div class="mySlides">
+        <img align="middle" src="{% static 'hackapp/chooseDept/blood.jpeg' %}" alt="home-doctor" style="width: 920px; height: 300px;" >
+        </div>
+        <div class="mySlides">
+        <img src="{% static 'hackapp/chooseDept/injection.jpeg' %}" alt="home-doctor" style="width: 920px; height: 300px;">
+        </div>
+        <div class="mySlides">
+                <img src="{% static 'hackapp/chooseDept/dentist2.jpeg' %}" alt="home-doctor" style="width: 920px; height: 300px;">
+                </div>
+    </div>
+    <script>
+            var myIndex = 0;
+            carousel();
+            function carousel(){
+                var i;
+                var x=
+                document.getElementsByClassName("mySlides");
+                for(i=0;i<x.length;i++){
+                    x[i].style.display = "none";}
+                myIndex++;
+                if(myIndex>x.length){
+                    myIndex=1
+                }
+                x[myIndex-1].style.display="block";
+                setTimeout(carousel,2000)
+                }
+
+    </script><br><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find Doctor of your location </h2><br>
+            <div>
+                <div style="float: left; width: 25%; height: 280px;padding-left: 50px;font-size: 20px;"><img src="{% static 'hackapp/chooseDept/child.jpg' %}" alt="Home-doctor" style="width: : 150px;height: 200px;"></a><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pediatrics
+            </div>
+                <div style="float:left;width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><a href="/postDeptChooseUser/"><img src="{% static 'hackapp/chooseDept/dentist.jpg' %}" alt="Home-doctor" style="width: 280px;height: 200px"><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dentists</div>
+                <div style="float: right; width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><img src="{% static 'hackapp/chooseDept/doctor2.jpg' %}" alt="Home-doctor" style="height: 200px;width: 280px;"><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;Orthopedist</div>
+                <div style="float: right;width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><img src="{% static 'hackapp/chooseDept/gastroenterology.jpg' %}" alt="Home-doctor" style="width: 280px;height: 200px;"><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;gastroenterology</div>
+
+                </div>
+              <div>
+                  <div style="float: left; width: 25%; height: 280px;padding-left: 50px;font-size: 20px;"><img src="{% static 'hackapp/chooseDept/dietian.jpg' %}" alt="Home-doctor" style="width: : 150px;height: 200px;"><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dietitian/Nutrition
+            </div>
+                  <div style="float:left;width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><a href="/postDeptChooseUser/"><img src="{% static 'hackapp/chooseDept/physician.jpg' %}" alt="Home-doctor" style="width: 280px;height: 200px"></a><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Physician</div>
+                  <div style="float: right; width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><a href="/postDeptChooseUser/"><img src="{% static 'hackapp/chooseDept/Physiotherapist.jpg' %}" alt="Home-doctor" style="height: 200px;width: 280px;"></a><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;Physiotherapist</div>
+                  <div style="float: right;width: 25%;height: 280px;font-size: 20px;padding-left: 50px;"><a href="/postDeptChooseUser/"><img src="{% static 'hackapp/chooseDept/gynecollogist.jpg' %}" alt="Home-doctor" style="width: 280px;height: 200px;"></a><br>&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;Gynecollogist</div>
+
+                </div>
+        </form>
+
+      <nav class="navbar navbar-default" style="background-color: #4762C6; color: #ffffff">
+<div>    <h2 style="color: #ffffff">Contact Us</h2><br><br>
+          <div><h3>For Booking and service queries:</h3></div>
+        Ph : 182545554511<br>
+        Email : FYD@gmail.com
+          </div>
+    </nav>
+    </body>
+</html>

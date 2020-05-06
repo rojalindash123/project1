@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>map</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    *{
+    margin:0;
+    padding:0;}
+    #map{
+    height:500px;
+    width:100%;
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<form action="/doctorSearch/" method="POST">
+<script>
+
+  function initMap(){
+      var lati={{latitude}}
+      var langi={{longitude}}
+      var location={lat:{{latitude}},lng:{{longitude}}};
+      print('location:',location)
+      var map= new google.maps.Map(document.getElementById("map"),{
+        zoom:4,
+        center:location
+      });
+
+      var marker=new google.maps.Marker({
+          position:location,
+          map: map
+      });
+  }
+</script>
+</form>
+<div style="width:20%; margin:auto; border-radius:18px;float:left;background-color:#4762c6;padding-left:10px;">
+  <div style="padding-left:20px;color:#ffffff;">
+  {% for name,speciality in comb_lis %}
+  Name:{{name}}<br>
+  Speciality:{{speciality}}
+    {% endfor %}</div>
+  <div style="color:#ffffff;padding-left:150px;">
+  <button class="btn btn-success" style="text-align: center;border-radius: 12px; color: #ffffff; font-size: 10px;"><a href="/ProfileViewDoctor/" style="color:#ffffff;">Profile</a></button>
+  </div>
+  </div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYyaY6RRc_etlj7DcLDggrIPj9mWBkIKw&callback=initMap" type="text/javascript"></script>
+
+</body>
+</html>

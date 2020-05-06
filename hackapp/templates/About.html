@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Find Yor Doctor </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+        <div>
+            {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top">
+    <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+    <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+</div>
+        </nav></section></div>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul class="navbar-nav mr-auto" align="right">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/about/">About <span class="sr-only"></span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/contact/">Contact Us <span class="sr-only"></span></a>
+      </li>
+    </ul></div></nav>
+<form action="/about/" method="post">
+        {% csrf_token %}
+<div class="w3-content w3-section">
+    <img src="{% static 'hackapp/welcome/FYD1.jpg' %}" alt="home-doctor" style="width:800px; height:200px; text-align:center;width:90%; display:block;margin-left:auto;margin-right:auto;">
+</div>
+<br><br>
+<div align="center" style="display: block; margin-left: auto; margin-right: auto; width:75%;" >
+<h2 style="color: #4762C6" align="center" style="font-family: 'Times New Roman', Times, serif;";>About Find Your Doctor .</h2><br>
+<div align="center" style="font-family: 'Times New Roman', Times, serif;";>
+
+    <img src="{% static  'hackapp/welcome/doctorNew.jpg' %}" alt="home-doctor" style="width:250px; height:250px;float:left;border-radius:10px;">
+
+<strong>FYD</strong> is a membership website that helps our members find specialist services in different location of the world.So, if you are not able to go the hospital ,you can find a specialist in your door-step.The way it works is, you create an account, select a service you are looking for . The specialists of that nearer location will display in the results page through GPS .
+    You can then click on the specialist details, know more about them and
+connect to them.If your request is confirmed you will get a confirmation text .We here at FYD want to make this easy
+for you to find and consult with a doctor of your choice.
+Once you have tried out their service, come back here and
+give them a feedback and ratings on how they performed, doesnot matter
+
+whether it is good or bad, we want to know. We want to help
+
+keep your needs at our priority.
+
+
+FYD is being designed especially for your convenience.
+</div>
+</div>
+<br><br>
+<div id="container" style="padding-left:300px;">
+<div style="float:left; width:50%;">
+    <img src="{% static  'hackapp/welcome/vision.jpg' %}" alt='home-doctor'>
+    <h4 style="color:#4762c6;">Our Vision</h4></div>
+<div style="float:left; width:25%;">
+    <img src="{% static  'hackapp/welcome/mission.jpg' %}" alt='home-doctor'>
+    <h4 style="color:#4762c6;">Our Mission</h4></div></div>
+
+     <div style="padding-left:250px;">
+     <div style="float:left; width:50%;color:#888888;">To provide medical treatment to Global patients.</div>
+    <div style="float:left;color:#888888; ">To service our clients with the best available<br> treatment.</div>
+     </div>
+
+     </br></br></br></br></br></br></br></br></br></br>
+
+
+
+      <nav class="navbar navbar-default" style="background-color: #000000; color: #ffffff">
+<div>    <h3 style="color: #ffffff">Contact Us</h3>
+    <a href="https://www.facebook.com/"><img src="{% static 'hackapp/welcome/facebook.png' %}" alt="facebook" style="width: 25px;margin-left:850px;border-radius:50%;"></a>
+    <a href="http://www.google.com/"><img src="{% static 'hackapp/welcome/Google.png' %}" alt="Google" style="width: 25px;margin-left:20px;border-radius:50%;"></a>
+          <div><h4>For Booking and service queries:</h4></div>
+    Address:College Of Engineering And Technology,Kalinga Nagar,Ghatikia,Bhubaneswar,Odisha,751003</br>
+        Ph : 182545554511<br>
+        Email : FYD@gmail.com
+          </div>
+    </nav>
+
+  <nav class="navbar navbar-default" style="background-color: #4c4c4c; color: #ffffff;">
+        <div align="centre" style="text-align:center;">
+
+        </div>
+    </nav>
+ </form></body>
+
+</html>

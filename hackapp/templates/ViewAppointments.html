@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+		<title>Find Yor Doctor </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+{% load static %}
+<body style="background-image: url('{% static 'hackapp/welcome/doctorNew.jpg' %}'">
+
+        <div>
+            {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top">
+    <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+    <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+
+    </div>
+    </nav>
+            </section>
+        </div><br>
+         <form action="" style="padding-left:750px;color:3348ff;">
+             <h5>
+            {% for name,address,date,slots in comb %}
+
+            Name:{{name}}<br><br>
+            Address:{{address}}<br><br>
+            Date:{{date}}<br><br>
+            Slot:{{slots}}<br><br>
+            <br>
+                 {% endfor %}</h5>
+             <button class="btn btn-success" style=""><a href="/confirm/"> Confirm</a></button>
+
+    </form>
+</body>
+</html>

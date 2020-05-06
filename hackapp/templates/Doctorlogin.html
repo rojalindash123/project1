@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignIn</title></head>
+{% load static %}
+    	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+{% load static %}
+    <div>
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #f08080">
+    <div class="navbar navbar-fixed top">
+        <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+
+
+        <div>
+            <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+        </div>
+        </div></nav></section></div>
+    <br><br><br>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div style="padding-left:250px; float:left; ">
+            <img src="{% static 'hackapp/welcome/login5.png' %}"style="width:300px;height:300px;">
+        </div>
+        <div style="padding-right:280px;text-align:right;color:#4762c6;"><h4> Welcome Back:)</h4></div><br>
+        <div style="width:30%; margin: auto;border-radius: 25px; padding-left:200px; float:left">
+        <div style="color: #ffffff; text-align: center; font-size: 15px;float:left;">
+       <input type="text" name="email" required="" placeholder="Email"  style="border-radius:18px; border:2px solid blue;font-size:20px;"><br><br>
+        <input type="password" name="pass" required="" placeholder="Password"  style="border-radius:18px; border:2px solid blue;font-size:20px;">
+<div style="color:#4762c6; padding-right:130px;">Forgot Password</div><br>
+            <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'hackapp/welcome/facebook.png' %}" alt="facebook" style="width: 25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="{% static 'hackapp/welcome/Google.png' %}" alt="Google" style="width: 25px;"><br><br>
+
+            <button class="btn btn-success" onclick="return loadDoctorReg();" style="text-align: center;border-radius: 12px;background-color: #3232ff; color: #ffffff; font-size:20px;"><a href="/createProfileDoctor/">Login</a></button>
+            </div></div></form>
+
+<script>
+    if(document.reg.email.value == '')
+		 {
+            document.getElementById('upmessage').innerHTML="Please Enter your Email";
+		    document.reg.email.focus();
+		    return false;
+		}
+		else if(echeck(email.value)==false){
+		document.getElementById('upmessage').innerHTML="Invalid Email";
+		document.reg.email.focus();
+		return false
+
+	    }
+		else
+		{
+		document.getElementById('upmessage').innerHTML="";
+		}
+
+		if(document.reg.password.value == '')
+		 {
+          document.getElementById('upmessage').innerHTML="Please Enter your Password";
+		    document.reg.password.focus();
+		    return false;
+		}
+
+</script>
+    </body>
+</html>

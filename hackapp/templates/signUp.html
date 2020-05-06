@@ -1,0 +1,443 @@
+<html lang="en"><head>
+{% load static %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor’s Registration Form for Online Appointment</title>
+<meta name="description" content="If you are a doctor and want to join us then get registered with us today to get online appointment in India. Call us at: 1800 835 0000 for more details.">
+<meta name="keywords" content="doctors registration, doctors registration online, cancer specialist, Medical consultation online, American doctors">
+
+<link href="{% static 'hackapp/signUp/style.css' %}" rel="stylesheet" type="text/css">
+ <link href="{% static 'hackapp/signUp/datepicker.css' %}" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+<div id="maincontainer">
+<header>
+<div class="top-line">
+<div class="container">
+
+<div class="top-line_right"><a href="#" class="show2">Doctor Login</a></div>
+
+<div class="clear"></div>
+</div>
+</div>
+<div class="container">
+    <div style="padding-top: 15px"><h1 style="color:#ffffff;">Find Your Doctor</h1></div>
+
+<nav id="cssmenu">
+<div id="head-mobile"></div>
+<div class="button"></div>
+
+<ul>
+<li><a href="home/">Home</a></li>
+
+
+</ul>
+
+</nav>
+
+
+</div>
+
+</header>
+  <script type="text/javascript">
+  jQuery.noConflict();
+  jQuery(document).ready(function($) {
+    $("#expdate1").datepicker();
+	$("#expdate2").datepicker();
+	$("#expdate3").datepicker();
+	$("#expdate4").datepicker();
+	$("#recognition").datepicker();
+  });
+  </script>
+  <style>
+	.why-share-img{border: 1px solid #e2e1e1;padding: 5px !important;line-height: 0;margin: 10px 0 !important;float: left;width: 100%;}
+  .why-share-img img{width:100%;}
+  </style>
+
+
+<section class="inner-probiderbanner">
+<div class="container">
+
+<div class="inner-contant">
+ {% load static %}
+ <span><img src="{% static 'hackapp/signUp/female-doctor.jpg' %}" alt="Doctor"  style="width:900px; height:200px; float:left; overflow:auto; width:50%;"></span>
+<p class="inner-caption"></p>
+
+</div>
+
+<div class="clear"></div>
+</div>
+</section>
+
+<section class="inner-page-contant">
+<div class="container">
+<h1 class="doc-registration">Doctor Registration</h1>
+
+<div class="profile">
+<div class="profile-sidebar">
+<div class="profile-box">
+
+<div class="pro-menu main-div-pro">
+<ul>
+    <h2 class="heading-main-font">Do you share our vision? Join the <strong>Face Your Doctor </strong>Team Now !</h2>
+<p>It has a simple goal: encouraging and aiding people in their pursuit of well-being. We simplify life for our clients by providing easy access to good doctors. You can join us in this mission by registering among our trusted doctors. Our work is synonymous with authenticity, and your association with it can, therefore, speak a lot about your reliability and expertise in medical consultation in addition to your qualifications.</p>
+<p>With an increasing number of health seekers contacting us for health with passing time, we need a larger team. Fitting in with us is the easiest if you are looking for a cooperative professional environment. We work to create a happier, healthier and stronger world, and you can join our team of doctors to do your bit!</p>
+
+<h2 class="heading-main-font">Why it's great to work with us</h2>
+<p>-	<b>Link between patients and doctors:</b> You are in the lookout for patients to help, and your patients are looking for you. Why be isolated when we can help you find each other?</p>
+<p>-	<b> A platform for your growth:</b> If you need an opportunity to kick-start your medical career, we are your perfect match! With us, you practice consultation while reaching out to a greater number of patients.</p>
+
+</ul>
+
+
+
+</div>
+</div>
+</div>
+
+
+<div class="profile-right">
+<div class="profile-box"><h3 class="second-heading">Fill the form below </h3>
+<div class="contact-form new-registration-form">
+<h2>Personal Details </h2>
+<form name="reg" action="/post_create/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<label class="half">First Name<input name="fname" id="fname" placeholder="Your Name" type="text" required=""></label>
+
+<label class="half">Last Name<input name="lname" id="lname" placeholder="Last Name" type="text" required=""></label>
+<div id="namemessage" style="color:#FF0000;"></div><br>
+
+<label class="half">Gender<select name="gender" id="gender">
+<option value="1">Male </option>
+<option value="2">Female </option>
+</select></label>
+
+
+<label class="half">Speciality Type
+
+<select name="speciality" id="speciality" required="">
+<option value="">Choose Speciality</option>
+
+   <option value="Allergy and immunology"> Allergy and immunology </option>
+   <option value="Anesthesiology"> Anesthesiology </option>
+   <option value="Cardiology (Disease)"> Cardiology (Disease) </option>
+    <option value="Cardiology (Interventional)"> Cardiology (Interventional) </option>
+	<option value="Child and Adolescent Psychiatry"> Child and Adolescent Psychiatry </option>
+    <option value="Chiropractic"> Chiropractic </option>
+    <option value="Clinical Cardiac Electrophysiology"> Clinical Cardiac Electrophysiology </option>
+    <option value="Colon and Rectal Surgery"> Colon and Rectal Surgery </option>
+    <option value="Diagnostic Radiology"> Diagnostic Radiology </option>
+    <option value="Dermatology"> Dermatology </option>
+    <option value="Emergency Medicine"> Emergency Medicine </option>
+    <option value="Endocrinology"> Endocrinology </option>
+    <option value="Facial Plastic Surgery"> Facial Plastic Surgery </option>
+    <option value="Family Medicine"> Family Medicine </option>
+    <option value="Family Medicine"> Family Medicine </option>
+	<option value="Gastroenterology"> Gastroenterology </option>
+    <option value="General Practice"> General Practice </option>
+    <option value="General Surgery"> General Surgery </option>
+    <option value="Geriatric Medicine"> Geriatric Medicine </option>
+    <option value="Hematology"> Hematology </option>
+    <option value="Hepatology"> Hepatology </option>
+    <option value="Hospitalist"> Hospitalist </option>
+    <option value="Infectious Disease"> Infectious Disease </option>
+    <option value="Internal Medicine"> Internal Medicine </option>
+    <option value="Medical Genetics"> Medical Genetics </option>
+    <option value="Naturopathy"> Naturopathy </option>
+    <option value="Nephrology"> Nephrology </option>
+    <option value="Neurology"> Neurology </option>
+    <option value="Neurosurgeon"> Neurosurgeon </option>
+    <option value="Nuclear Medicine"> Nuclear Medicine </option>
+    <option value="Nutritionist"> Nutritionist </option>
+    <option value="Obstetrics / Gynecology (OBGYN)"> Obstetrics / Gynecology (OBGYN) </option>
+    <option value="Occupational Medicine"> Occupational Medicine </option>
+    <option value="Ophthalmology"> Ophthalmology </option>
+    <option value="Optometry"> Optometry </option>
+    <option value="Oncology"> Oncology </option>
+    <option value="Orthopedic Surgery"> Orthopedic Surgery </option>
+    <option value="Osteopathic Medicine"> Osteopathic Medicine </option>
+    <option value="Osteopathic Medicine"> Osteopathic Medicine </option>
+    <option value="Otolaryngology / ENT"> Otolaryngology / ENT </option>
+    <option value="Pain Medicine"> Pain Medicine </option>
+    <option value="Pathology (Anatomic/Clinical)"> Pathology (Anatomic/Clinical) </option>
+    <option value="Pediatrics"> Pediatrics </option>
+    <option value="Physical Medicine and Rehabilitation"> Physical Medicine and Rehabilitation </option>
+    <option value="Plastic and Reconstructive Surgery"> Plastic and Reconstructive Surgery </option>
+    <option value="Podiatry"> Podiatry </option>
+    <option value="Primary Care"> Primary Care </option>
+    <option value="Psychiatry"> Psychiatry </option>
+    <option value="Psychology"> Psychology </option>
+    <option value="Pulmonary Disease"> Pulmonary Disease </option>
+    <option value="Radiology"> Radiology </option>
+    <option value="Rheumatology"> Rheumatology </option>
+    <option value="Thoracic Surgery"> Thoracic Surgery </option>
+    <option value="Transplant Surgery"> Transplant Surgery </option>
+
+
+
+
+     </select></label>
+
+
+<div id="dgmessage" style="color:#FF0000;"></div><br>
+
+
+
+
+
+<div id="lmessage" style="color:#FF0000;"></div><br>
+<label class="half">Email ID/User Name<input name="email" id="email" placeholder="Enter Your Valid Email" type="email" required=""></label>
+<label class="half">Password<input name="password" id="password" placeholder="Password" type="password" required=""> </label>
+
+<label class="half">Contact Number<input name="cnumber" id="cnumber" placeholder="Primary numbers to receive calls from patience" type="number"></label>
+<label class="half">Alternate Contact Number<input name="acnumber" id="acnumber" placeholder="Secondary number in case primary is not reachable" type="number"></label>
+
+<label class="half">Upload Profile Image<input name="profileimage" id="profileimage" placeholder="Professional high definition picture displayed to the patients" type="file"></label>
+<label class="half">Upload a copy of valid Medical Licenses<input name="lisenseimage" id="lisenseimage" placeholder="Upload a copy of valid Medical Licenses" type="file"></label>
+
+
+<div id="upmessage" style="color:#FF0000;"></div><br>
+
+
+
+
+<label class="half">Year Of Experience<input name="YOE" id="YOE"  placeholder="Year Of Experience">Year Of Experience</input></label>
+
+
+
+
+
+<label>Professional Statement<textarea name="aboutme" id="aboutme" cols="35" rows="3" placeholder="Professional background covering the reason why I chose medicine and this specialization, practices worked at, achievements"></textarea></label>
+
+<label>Publications and Presentations<textarea name="publications" id="publications" cols="35" rows="3" placeholder="doctors to  provide hyperlink"></textarea></label>
+
+
+<button class="btn submit-btn" name="submit" onclick="return loadDoctorReg();">Submit</button>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="clear"></div>
+</div>
+</section>
+  <script type="text/javascript">
+
+      function loadDoctorReg()
+      {
+	     if(document.reg.fname.value == '')
+		 {
+          document.getElementById('namemessage').innerHTML="Please Enter your First Name";
+		   // alert("Please Enter your First Name");
+		    document.reg.fname.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('namemessage').innerHTML="";
+		}
+
+		if(document.reg.lname.value == '')
+		 {
+          document.getElementById('namemessage').innerHTML="Please Enter your Last Name";
+		    document.reg.lname.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('namemessage').innerHTML="";
+		}
+		if(document.reg.datepicker.value == '')
+		 {
+          document.getElementById('dgmessage').innerHTML="Please Select your Date of Birth";
+		    document.reg.datepicker.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('dgmessage').innerHTML="";
+		}
+
+		if(document.reg.gender.value == '')
+		 {
+          document.getElementById('dgmessage').innerHTML="Please Select your Gender";
+		    document.reg.gender.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('dgmessage').innerHTML="";
+		}
+
+
+		if(document.reg.langpreffered.value == '')
+		 {
+          document.getElementById('lmessage').innerHTML="Please Enter your Preffered Language";
+		    document.reg.langpreffered.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('lmessage').innerHTML="";
+		}
+		if(document.reg.email.value == '')
+		 {
+            document.getElementById('upmessage').innerHTML="Please Enter your Email";
+		    document.reg.email.focus();
+		    return false;
+		}
+		else if(echeck(email.value)==false){
+		document.getElementById('upmessage').innerHTML="Invalid Email";
+		document.reg.email.focus();
+		return false
+
+	    }
+		else
+		{
+		document.getElementById('upmessage').innerHTML="";
+		}
+
+		if(document.reg.password.value == '')
+		 {
+          document.getElementById('upmessage').innerHTML="Please Enter your Password";
+		    document.reg.password.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('upmessage').innerHTML="";
+		}
+
+		if(document.reg.specialization.value == '')
+		 {
+          document.getElementById('spmessage').innerHTML="Please Enter your Specialization";
+		    document.reg.specialization.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('spmessage').innerHTML="";
+		}
+
+		if(document.reg.edu.value == '')
+		 {
+          document.getElementById('edumessage').innerHTML="Please Enter your Education/Qualification";
+		    document.reg.edu.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('edumessage').innerHTML="";
+		}
+
+
+
+		if(document.reg.exp.value == '')
+		 {
+          document.getElementById('expmessage').innerHTML="Please Select your Experience";
+		    document.reg.exp.focus();
+		    return false;
+		}
+
+		else
+		{
+		document.getElementById('expmessage').innerHTML="";
+		}
+
+      }
+    </script>
+ <script type="text/javascript" language="javascript">
+
+	function echeck(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+			return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		      return false
+		 }
+
+		 if (str.indexOf(" ")!=-1){
+		      return false
+		 }
+
+ 		 return true
+	}
+
+	function frmValidate(){
+	var fld_email = document.getElementById("fld_email");
+    var password = document.getElementById("fld_password");
+
+	if(fld_email.value == '')
+	{
+    	alert('Please enter Valid Email.');
+
+		fld_email.focus();
+
+		return false;
+
+	}else if(echeck(fld_email.value)==false){
+		alert("Invalid Email")
+		fld_email.focus();
+		return false
+
+	}
+
+
+	if(password.value == '')
+	{
+    	alert('Please enter Password.');
+		password.focus();
+		return false;
+	}
+}
+</script>
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async=""></script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5921d75976be7313d291dbd2/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</div></body></html>

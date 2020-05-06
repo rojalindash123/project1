@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Your Doctor</title>
+</head>
+<body>
+ <form action="/UpdatedProfileUser/" method="">
+               <div class="shadow-lg p-3 mb-5" style="background-color: #4762C6;width:35%; padding: 50px; margin: auto;border-radius:25px;opacity:0.8;">
+        <div style=" color: #ffffff; text-align: center; font-size: 15px;">
+        {% csrf_token %}
+            {% for name,address,gender,phone,image in comb_lis %}
+                Name<input type="text" name="uname" id="name" value="{{name}}"><br><br>
+                Address<input type="text" name="uaddress" id="address" value="{{address}}"><br><br>
+                Gender<input type="radio" name="ugender" id="gender1" value="{{gender}}">
+                    <input type="radio" name="ugender" id="gender2" value="{{gender}}"><br><br>
+                Phone No<input type="number" name="uphone" id="phone" value="{{phone}}"><br><br>
+                Image<input type="file" name="uimage" id="image" value="{{image}}">
+            {% endfor %}
+            <button onclick="updateData()">Submit</button>
+            <script src=“https://www.gstatic.com/firebasejs/4.3.1/firebase.js”></script>
+            <script>
+               var config = {
+                        'apiKey': "AIzaSyCf6-bwCFhwlEIUnB9iknsXp5TtvN5AvRU",
+                        'authDomain': "test3-44aae.firebaseapp.com",
+                        'databaseURL': "https://test3-44aae.firebaseio.com",
+                        'projectId': "test3-44aae",
+                        'storageBucket': "test3-44aae.appspot.com",
+                        'messagingSenderId': "762001228928",
+                        'appId': "1:762001228928:web:57fb68b28ca2099a035265",
+                        'measurementId': "G-LD795LELXW"
+                        };
+                        firebase = pyrebase.initialize_app(config)
+                        db=firebase.database().ref()
+                        function updateData(){
+                        name=document.getElementById('name').value;
+                        address=document.getElementById('address').value;
+                        gender=document.getElementById('gender').value;
+                        image=document.getElementById('image').value;
+                        phone=document.getElementById('phone').value;
+
+                        data={name,address,gender,image}
+                        db.child('UserProfile').update(data)
+                        }
+            </script>
+        </div></div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title></title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+{% load static %}
+{% for name,address,license,phone,speciality,work,year,email in comb_lis %}
+      <nav class="navbar navbar-default" style="background-color: #4762C6">
+          <div class="navbar navbar-fixed top">
+               <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+              <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+              <div style="padding-left:900px;margin-bottom:20px;">
+            <button class="btn btn-success" style="text-align: center; position: absolute;border-radius: 12px;background-color: #ffffff; color:#4762C6;"><a href="/Timeslot">Request Appointment</a></button>
+        </div>
+          </div>
+      </nav><br><br>
+    <div style="float:left;text-align: center;background-color:#4762c6;border-radius:200%;margin-left:100px;width:250px;margin-top:50px;">
+        <i class="fa fa-user" style="font-size: 200px;color:floralwhite;"></i>
+    </div>
+
+    <div style="float:left;margin-left:150px;">
+        <h2>{{name}}</h2>
+    </div>
+<br><br><br>
+    <div style="background-color: antiquewhite;margin-left: 400px;margin-right: 650px;text-align: center;">
+        <h4>Contact Information</h4>
+    </div>
+    <div style="text-align: center;margin-right: 350px;">
+        <h5>Email  :{{email}}</h5></div>
+    <div style="text-align: center;margin-right:300px;">
+        <h5>Phone :{{phone}}</h5>
+    </div>
+    <div style="background-color: antiquewhite;margin-left: 400px;margin-right: 650px;text-align: center;">
+        <h4>General Information</h4>
+    </div>
+     <div style="text-align: center;margin-right: 480px;">
+         <h5>Address :{{address}}</h5></div>
+    <div style="text-align: center;margin-right:480px; ">
+    <h5>Speciality :{{speciality}}</h5>
+    </div>
+    <div style="text-align: center;margin-right:300px; ">
+    <h5>Currently Working at :{{work}}</h5>
+    </div>
+    <div style="text-align: center;margin-right:120px;">
+    <h5>Experience:{{year}}Yr</h5>
+    </div>
+
+    <div style="text-align: center;margin-left:15px; ">
+    <h5>License:{{license}}</h5>
+    </div>
+
+
+            {% endfor %}
+    </body></html>

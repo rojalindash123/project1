@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignIn</title></head>
+    	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+    <div>
+        {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top"><br><br>
+      <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px; padding-left:50px;" >
+
+        <div>
+            <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+        </div>
+        </div></nav></section></div>
+<br><br>
+
+
+    <form action="/postSignupUser/" method="post">
+        {% csrf_token %}
+        <div style="padding-left:250px; float:left; ">
+            <img src="{% static 'hackapp/welcome/login4.png' %}"style="width:300px;height:300px;">
+        </div>
+        <div style="padding-right:280px;text-align:right;color:#4762c6;"><h4> Welcome:)</h4></div><br>
+        <div style="width:35%; margin: auto;border-radius: 25px;padding-left:200px; float:left;">
+        <div style=" color: #ffffff; text-align: center; font-size: 15px; float:left;">
+			{% load static %}
+
+            <input type="text" name="email" id="textEmail" required="" placeholder="Email" style="border-radius:18px; border:2px solid blue;font-size:20px;"><br><br>
+        <input type="password" name="pass" id="txtPassword" required="" placeholder="Password" style="border-radius:18px; border:2px solid blue;font-size:20px;"><br><br>
+            <input type="password" name="password2" id="txtConfirmPassword" required="" placeholder="Confirm Password" style="border-radius:18px; border:2px solid blue;font-size:20px;"><br><br>
+            <a href="{% url 'social:begin' 'facebook' %}" style="padding-left:20px;"><img src="{% static 'hackapp/welcome/facebook.png' %}" alt="facebook" style="width: 25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'social:begin' 'google' %}"><img src="{% static 'hackapp/welcome/Google.png' %}" alt="Google" style="width: 25px;"></a><br><br>
+            <div  style="padding-right:5px;">
+                <button class="btn btn-success" style="text-align: center;border-radius: 20px;background-color: #4762c6; color: #ffffff; font-size:20px;" onclick="return Validate()">Register</button>
+            </div>
+             <div style="font-size:10px; padding-left:5px;color:#4762c6">Already have an account?<strong><a href="/Userlog/" style="color:#4762c6;">Login</a></strong></div>
+            </div></div></form>
+<p id="demo" style="color: red;"></p>
+<script type="text/javascript">
+    function Validate() {
+     myFunction();
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+
+    }
+
+
+</script>
+ <script>
+    function myFunction() {
+        var email;
+
+        email = document.getElementById("textEmail").value;
+
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (reg.test(textEmail.value) == false)
+            {
+            document.getElementById("demo").style.color = "red";
+                document.getElementById("demo").innerHTML ="Invalid EMail ->"+ email;
+                alert('Invalid Email Address ->'+email);
+                return false;
+            } else{
+            document.getElementById("demo").style.color = "DarkGreen";
+            }
+
+       return true;
+    }
+    </script>
+
+
+    </body>
+</html>

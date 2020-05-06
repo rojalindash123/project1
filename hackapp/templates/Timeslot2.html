@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <title>Find Tour Doctor</title>
+</head>
+{% load static %}
+<body style="background-image: url('{% static 'hackapp/welcome/doctorNew.jpg' %}'">
+
+
+
+<div>
+            {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top" style="padding-left:10px;">
+    <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+    <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;padding-top:5px;" >Find Your Doctor</a>
+    </div>
+        </nav></section></div>
+
+<br>
+
+<form action="/ratings1/" method="post">
+    {% csrf_token %}
+    {% load static %}
+    <div style="padding-left:700px;float:left;">
+         <div style="float:left;width:10px;height:5px;color:4762c6">
+            <img src="{% static 'hackapp/welcome/list.png' %}" style="width:20px;height:15px;">
+        </div>
+    &nbsp;&nbsp;&nbsp;Confirm Date:<br>
+        <input type="date" name="date" style="background-color:#4762c6;color:#ffffff;">
+    </div>
+    <div class="dropdown" style="float:left;padding-left:150px;">
+        <div style="float:left;width:10px;height:5px;">
+            <img src="{% static 'hackapp/welcome/time.png' %}" style="width:20px;height:15px;">
+        </div>
+       &nbsp;&nbsp;&nbsp; Confirm Slot:<br>
+  <select name="slot" style="background-color:4762c6;">
+    <option href="" style="background-color:#4762c6;">8pm-10am</option><br>
+    <option href="">10am-12pm</option><br>
+    <option href="">12pm-2pm</option><br>
+  </select>
+    </div>
+    <div style="padding-left:900px;padding-top:350px;">
+    <button type="submit" class="btn btn-success" style="background-color:#3348ff;width:80px;height:45px;font-size:20px;align:center;">Submit</button>
+    </div>
+</form>
+</body>
+</html>

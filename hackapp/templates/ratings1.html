@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Font Awesome Icon Library -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.checked {
+    color: orange;
+}
+</style>
+  <script type="text/javascript">
+var rating;
+function starmark(item)
+{
+rating=item.id[0];
+sessionStorage.starRating = rating;
+var subid= item.id.substring(1);
+for(var i=0;i<5;i++)
+{
+if(i<rating)
+{
+document.getElementById((i+1)+subid).style.color="orange";
+}
+else
+{
+document.getElementById((i+1)+subid).style.color="blue";
+}
+}
+}
+function result()
+{
+//Rating : rating
+//Review : Comment(id)
+alert("Rating : "+rating+"\nReview : "+document.getElementById("comment").value);
+}
+</script>
+<script language="JavaScript">
+  function showInput(){
+      document.getElementById('display').innerHTML=document.getElementById('comment').value;
+  }
+</script>
+  <script language="JavaScript">
+    function showStar(){
+    document.getElementById('display1').innerHTML=document.getElementById('rating').value;
+    }
+  </script>
+
+</head>
+{% load static %}
+<body>
+   <div>
+            {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top">
+    <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:30px; height:30px;" >
+    <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+    </div>
+        </nav></section></div><br>
+
+
+<div style="padding-left:200px;">
+  <h2 style="color:#4762c6;margin-left:120px;">Your request has been successfully received .</h2>
+  <h3 style="margin-left:250px;color:#ff0000;">Thank You For Your Support .</h3></div><br>
+
+<form action="/postratings/" method="POST">
+  {% csrf_token %}
+    <div id="rating" name="rating" style="margin-left:500px;color:blue;">
+<span onclick="starmark(this)" onmouseover="starmark(this)" id="1one" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked" name="star"></span>
+<span onclick="starmark(this)" onmouseover="starmark(this)" id="2one" style="font-size:40px;cursor:pointer;" class="fa fa-star" name="star"></span>
+<span onclick="starmark(this)" onmouseover="starmark(this)" id="3one" style="font-size:40px;cursor:pointer;" class="fa fa-star " name="star"></span>
+<span onclick="starmark(this)" onmouseover="starmark(this)" id="4one" style="font-size:40px;cursor:pointer;" class="fa fa-star" name="star"></span>
+<span onclick="starmark(this)" onmouseover="starmark(this)" id="5one" style="font-size:40px;cursor:pointer;" class="fa fa-star" name="star"></span>
+    </div><br><br>
+  <div style="margin-left:250px;">
+<input  style="margin-top:5px;width:700px;" class="form-control" rows="3" id="comment" placeholder="Enter your review" name="comment"></input><br><br>
+    <div style="margin-left:280px;">
+      <button type="submit" class="btn btn-success" onclick="result();" style="background-color:#4762c6;"> Submit</button>
+    </div>
+  </div>
+</form>
+  </div>
+<p>
+  <span id="display1"></span>
+</p></form><br><br><br>
+ <nav class="navbar navbar-default" style="background-color: #000000; color: #ffffff">
+<div>    <h3 style="color: #ffffff">Contact Us</h3>
+    <a href="https://www.facebook.com/"><img src="{% static 'hackapp/welcome/facebook.png' %}" alt="facebook" style="width: 25px;margin-left:850px;border-radius:50%;"></a>
+    <a href="http://www.google.com/"><img src="{% static 'hackapp/welcome/Google.png' %}" alt="Google" style="width: 25px;margin-left:20px;border-radius:50%;"></a>
+          <div><h4>For Booking and service queries:</h4></div>
+    Address:College Of Engineering And Technology,Kalinga Nagar,Ghatikia,Bhubaneswar,Odisha,751003</br>
+        Ph : 182545554511<br>
+        Email : FYD@gmail.com
+          </div>
+    </nav>
+</body>
+</html>

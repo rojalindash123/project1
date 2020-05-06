@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+{% load static %}
+ <div>
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #3232ff">
+    <div class="navbar navbar-fixed top">
+    <img src="{% static 'hackapp/welcome/download.png' %}" alt="logo" style="width:50px; height:50px; padding-left:20px;" >
+
+        <div>
+            <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+        </div>
+        </div></nav></section></div><br><br><br>
+
+
+  <div>
+     {% load static %}
+
+
+        <div style="padding-left:150px; float:left;">
+            <img src="{% static 'hackapp/welcome/patient2.jpg' %}"style="width:400px;height:400px;border-radius:20px;">
+        </div>
+<form action="/createProfileDoctor/" method="post" style="padding-right:150px;">
+        {% csrf_token %}
+        <div style="background-color: #4762c6;width:40%; padding: 50px; margin: auto;border-radius: 25px;float:right;padding-right:40px;">
+        <div style=" color: #ffffff; text-align: center; font-size: 15px;">
+			{% load static %}
+        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" required="" pattern="[A-Za-z]"><br><br>
+        Phone No:&nbsp;&nbsp;&nbsp;<input type="text" name="phone" required=""><br><br>
+        Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address" required="" pattern="[A-Za-z]"><br><br>
+        Speciality:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="speciality" id="speciality" required="">
+            <option value="Dentist" name="Dentist">Dentist</option>
+            <option value="Cardiology" name="Cardiology">Cardiology</option>
+            </select><br><br>
+        Currently working at:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="work" required="" pattern="[A-Za-z]"><br><br>
+        Year of Experience:&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="year" required=""><br><br>
+        Valid license:<input type="file" name="license" required=""><br><br>
+        <button onclick="return loadDoctorReg();" style="text-align: center;border-radius: 12px;background-color: #3232ff; color: #ffffff; font-size: 30px;">Submit</button><br>
+            </div></div></form>
+<script>
+
+</script>
+  </div></body>
+</html>

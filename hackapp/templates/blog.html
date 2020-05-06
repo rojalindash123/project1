@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button"><a href=""> Create</a></button>
+<button type="button" ><a href="/checking/"> Check</a></button>
+
+{% for time,dat,email in comb_lis %}
+Date:{{dat}} &nbsp; email:{{email}}<a href="/post_check/">work</a>
+<br>
+{% endfor %}
+</body>
+</html>

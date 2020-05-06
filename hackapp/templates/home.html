@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Check</title>
+    <body>
+<form action="/post_check/" method="post">
+    {% csrf_token %}
+    Email:<input type="text", name="email" required>
+    password:<input type="text", name="password" required>
+    <input type="submit" value="submit">
+
+</form>
+<button type="button" value="check"></button>
+</body>
+</head>
+</html>

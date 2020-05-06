@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Your Doctor</title>
+</head>
+<body>
+<form>
+  <div class="shadow-lg p-3 mb-5" style="background-color: #4762C6;width:35%; padding: 50px; margin: auto;border-radius:25px;opacity:0.8;">
+        <div style=" color: #ffffff; text-align: center; font-size: 15px;">
+        {% csrf_token %}
+            {% for name,address,gender,phone,image in comb_lis %}
+
+            Name:{{name}}<br><br>
+            Address:{{address}}<br><br>
+            Gender:{{gender}}<br><br>
+            Phone No:{{phone}}<br><br>
+            Image:{{image}}<br>
+            <br>
+            {% endfor %}
+        </div></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Securely sign in to your account">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+ <div>
+     {% load static %}
+            <section class="mainmenu-area stricky">
+    <nav class="navbar navbar-default" style="background-color: #4762C6">
+    <div class="navbar navbar-fixed top">
+    <img src="{% static 'hackapp/welcome/download.png' %}"alt="logo" style="width:50px; height:50px; padding-left:20px;" >
+
+        <div>
+            <a class="external" target="_blank" style="color: #ffffff; font-size: 40px;" >Find Your Doctor</a>
+        </div>
+        </div></nav></section></div><br><br><br>
+
+        <div style="padding-left:150px; float:left;">
+            <img src="{% static 'hackapp/welcome/patient2.jpg' %}"style="width:400px;height:400px;border-radius:20px;">
+        </div>
+<form action="/createProfileUser/" method="post" style="padding-right:150px;">
+        {% csrf_token %}
+        <div style="background-color: #4762c6;width:35%;height:400px;border-radius: 25px;float:right;padding-right:40px;"><br><br>
+        <div style=" color: #ffffff; text-align: center; font-size: 15px;">
+			{% load static %}
+        Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" required="" pattern="[A-Za-z]"><br><br>
+        Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address1" required="" pattern="[A-Za-z]"><br><br>
+            Phone No&nbsp;&nbsp;&nbsp;<input type="text" name="phone" required=""><br><br>
+            Gender&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="Female">Female
+            <input type="radio" name="gender" value="other">Other<br><br>
+            Your Image<input type="file" name="image" required=""><br><br>
+            <button style="text-align: center;border-radius: 12px;background-color: #f08080; color: #ffffff; font-size: 30px;">Submit</button><br>
+            </div></div></form>
+<script>
+     function loadDoctorReg()
+      {
+	     if(document.reg.name.value == '')
+		 {
+          document.getElementById('namemessage').innerHTML="Please Enter your Name";
+		    alert("Please Enter your Name");
+		    document.reg.name.focus();
+		    return false;
+		}
+			document.getElementById('dgmessage').innerHTML="";
+		}
+
+		if(document.reg.gender.value == '')
+		 {
+          document.getElementById('dgmessage').innerHTML="Please Select your Gender";
+		    document.reg.gender.focus();
+		    return false;
+		}
+
+		}
+</script>
+<script>
+
+
+
+</script>
+</body>
+</html>
